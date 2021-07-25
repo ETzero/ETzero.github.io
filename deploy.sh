@@ -1,7 +1,9 @@
-echo '--------upload files start--------'
 
+echo '--------pre deploy start--------'
 python3 pre_deploy.py
+echo '--------pre deploy end--------'
 
+echo '--------upload files start--------'
 # git init
 git add .
 git status
