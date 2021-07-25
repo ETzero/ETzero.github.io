@@ -1,0 +1,59 @@
+docsify-share - 一个在你的docsify中添加分享按钮的插件。@coroo.
+docsify-count - 为docsify的markdown文件添加字数统计。（添加字数统计）@827652549。
+docsify-rtl - 为docsify添加rtl和bidi支持 @koliberr136a1.
+docsify-remote-markdown - 从远程加载markdown docs。@JerryC.
+docsify-pagination - 为docsify分页 @imyelo.
+docsify-plantuml - 用于docsify的PlantUML @imyelo。
+docsify-puml - Docsify解析PlantUML内容的插件 @indieatom.
+docsify-copy-code - 一个可以将Markdown代码块复制到剪贴板上的docsify插件 @jperasmus.
+docsify-demo-box-vue - 在docsify中编写Vue演示，可即时预览并与jsfiddle集成 @njleonzhang.
+docsify-demo-box-react - 在docsify中编写React jsx演示，可即时预览并与jsfiddle集成 @njleonzhang.
+docsify-edit-on-github - 在每个页面上添加编辑GitHub的按钮 @njleonzhang.
+docsify-tabs - 一个用于从markdown显示标签内容的docsify插件 @jhildenbiddle.
+docsify-katex - 一个用于呈现LaTex数学方程式的docsify插件 @upupming.
+docsify-pdf-embed - 一个用于在任何页面嵌入PDF的docsify插件 @lazypanda10117.
+docsify-plugin-flexible-alerts - 一个docsify插件，可以使用预先配置或自己的风格和警报类型将区块引号转换为美丽和可配置的警报。@fzankl.
+docsify-pdf-converter - 基于你的docsify项目创建PDF文件 @meff34.
+docsify-commento - 在每一页的底部添加commento部分 @ndom91.
+docsify-gifcontrol - 一个docsify插件，为GIF添加可定制的播放器控制。@adambergman 来自@gbodigital。
+docsify-example-panels - 一个用于渲染石板一样的右侧示例面板的插件。
+docsify-glossary - 一个为常用术语创建简单词汇表的插件。
+docsify-toc - 在你的网站上添加一个目录。@mrpotatoes.
+docsify-fontawesome - 通过tokens将FontAwesome添加到文档。
+docsify-footer-enh - Footer Enhancement插件。
+docsify-mustache - 一个允许用Mustache模板引擎预处理markdown文档的docsify插件。
+docsify-bitbucket - 一个帮助在Bitbucket服务器和Bitbucket云中使用docsify的插件。
+docsify-slides - 一个用于创建类似幻灯片的页面的插件。
+docsify-Phaser - 在 docsify 页面中启用 Phaser 代码。
+docsify-changelog-plugin - 将你的更新日志整合到一个可爱的面板中。
+docsify-top-bannner-plugin - 在顶部添加一个简单而甜蜜的横幅，以便宣布一些事情。
+docsify-dark-mode - 在你的docsify网站中添加黑暗模式支持。
+docsify-valine - 一个允许你在docsify页面上使用快速、简单、强大的评论系统valine的docsify插件。
+docsify-twemoji😀 - 一个允许为docsify解析twemoji风格的所有表情符号的插件（推特表情符号）。
+docsify-livere💬 - 一个易于安装的插件，用于在你的文档上建立强大的评论系统LiveRe。（来必力评论插件
+docsify-select - 在markdown中用选择菜单可变地呈现内容。
+docsify-mermaid - 一个在docsify中呈现mermaid图的插件。
+docsify-plugin-carbon - 一个让你轻松在docsify中添加Carbon广告的插件。
+docsify-pangu - 一个docsify插件，用于中文和英文，数字、符号之间自动添加空格。@sy-records.
+docsify-gtlfexplorer - 一个在你的文档中嵌入可操作的三维模型的插件。
+docsify-corner - 一个在右上角有更多 repo widgets 的增强插件，如 Gitlab。@Koooooo-7
+docsify-autoHeader - 将你的markdown变成一个层叠的编号文件。很适合大型文档，无需手动为所有标题编号。@markbattistella
+docsify-sidebarFooter - 在侧边栏的底部添加一些链接 - 版权年、公司、隐私政策、服务条款。
+docsify-sidebar-collapse - 支持docsify侧边栏目录的展开和收起。
+websequencediagrams-docsify - 一个将WebSequenceDiagrams直接嵌入你的文档的插件。
+docsify-material-icons - 通过tokens向文档添加材料图标。
+docsify-ethicalads - Docsify的EthicalAds支持。
+docsify-wikilink - 一个允许wiki内部链接语法的插件，通过使用双方括号如[[pagename|link text]]。
+docsify-link-preview - 一个渲染链接预览的插件。
+docsify-pseudocode - 一个在docsify中呈现伪代码的插件。伪代码--@h-hg
+docsify-footer - 用于支持docsify的网站的markdown _footer.md插件。@alertbox.
+docsify-code-inline - 启用内联代码的语法高亮，而不仅仅是代码栅栏。再也不会有内联代码看起来很枯燥了。@rakutentech
+docsify-beian - 一个在docsify中添加中文北安信息的插件。@HerbertHe
+docsify-progress - 一个在docsify中呈现阅读进度的插件。@HerbertHe.
+docsify-codeblock-iframe - 一个为docsify提供markdown额外codeblock-iframe语法支持的插件，只是为了安全地支持iframe渲染。@HerbertHe.
+docsify-kroki - 一个将kroki整合到docsify的插件。@zuisong.
+docsify-charty - 在你的docsify网站上添加一些图表和图形。饼图、圆环图、剖面图、条形图和柱形图、线图和情节图，以及一个评论块。如果你需要将一些数字可视化，你需要的一切
+docsify-accordify - 在你的docsify网站中轻松使用手风琴。@atleastzero.
+docsify-plugin-title - 自定义docisify页面标题。@sujaykumarh
+docsify-drawio - 这是一个docsify插件，可以将drawio xml数据转换成docs中的图片。@KonghaYao
+docsify-plugin-footer - 简化的docisify页脚。@sujaykumarh.
