@@ -7,7 +7,7 @@
 
 目前，计算机使用的浮点数，是采用IEEE标准的浮点数的存储和计算方式。根据IEEE标准，浮点数是通过科学计数法来存储的，如下显示
 
-![avatar](..\..\images\1.png)
+![avatar](https://cdn.jsdelivr.net/gh/etzero/static@master/images/Upic/2021/07/26/1.png)
 
 浮点数在计算机中的存储分为三个部分： 
 
@@ -15,12 +15,12 @@
 2. 指数位（exponent）：存储科学计数法中的指数部分，采用移位存储 
 3. 尾数位（fraction）：存储科学计数法中的尾数部分
 
-![avatar](..\..\images\2.png)
+![avatar](https://cdn.jsdelivr.net/gh/etzero/static@master/images/Upic/2021/07/26/2.png)
 
 
 根据IEEE 754标准，单精度float类型使用32比特存储，其中1位表示符号，8位表示指数，23位表示尾数；双精度double类型使用64比特存储，1位符号位，11位指数位，52位尾数位。
 
-![avatar](..\..\images\3.png)
+![avatar](https://cdn.jsdelivr.net/gh/etzero/static@master/images/Upic/2021/07/26/3.png)
 
 ---
 
@@ -99,13 +99,11 @@ namespace TypeTest
 	001111010111000010100011
 	00111101011100001010010		(截取23位后的结果，第24位为1，进位1。再与第23位的1相加，再进位，得到结果)
 
-
-
 #### 逆序
 
 在VS2010中，通过设置断点，然后在内存窗口中输入变量的地址，即可查看到变量在内存的值。
 
-![avatar](..\..\..\images\4.png)
+![avatar](https://cdn.jsdelivr.net/gh/etzero/static@master/images/Upic/2021/07/26/4.png)
 
 在Address中输入 `&af` ，则会跳到变量 `af` 的位置上。如图中划红线的部分 `0x05C6EB80` 就是变量的地址，其值是后面紧跟的部分。
 

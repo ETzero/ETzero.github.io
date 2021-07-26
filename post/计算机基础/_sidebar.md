@@ -1,3 +1,2 @@
 - [👈🏻 Go back](README.md)
-- [组成原理](计算机基础/组成原理/README.md)
 - [NET浮点数存储](计算机基础/NET浮点数存储.md)
