@@ -59,13 +59,13 @@ pNULL value: 0
 
 先看代码
 
-``` c
+```c
 #include <stdio.h>
 #include <string.h>
 
-#define PRINT_D(intValue)		printf(#intValue" is %d\n", (intValue));     #define PRINT_D(intValue)		printf(#intValue" is %d\n", (intValue));    #define PRINT_D(intValue)		printf(#intValue" is %d\n", (intValue));
+#define PRINT_D(intValue)		printf(#intValue" is %d\n", (intValue));
 #define OFFSET(struct,member)   ((char *)&((struct *)0)->member - (char *)0)
-#define OFFSET(struct,member) 	((size_t) &((struct *) 0)->member)
+#define OFFSET(struct,member)   ((size_t) &((struct *) 0)->member)
 
 #pragma pack(4)
 
@@ -82,6 +82,7 @@ int main(void)
     PRINT_D(OFFSET(student, sex))
     PRINT_D(OFFSET(student, score))
     PRINT_D(OFFSET(student, age))
+
     return 0;      
 }
 ```
@@ -197,3 +198,42 @@ main funcion a address = 0x601030, a = 98, getA() = 99
 
 如果需要在多文件使用的全局变量，则可以使用 `extern` 。
 在头文件中使用 `extern`，然后在 .cpp 文件中定义。(代码中注释掉的部分)
+
+## 范围判断
+
+```c
+#define MIN_STACK_SIZE (128 * 1024)
+#define MAX_STACK_SIZE (1024 * 1024)
+#define MIN(a, b) ((a) > (b) ? (b) : (a))
+#define MAX(a, b) ((a) < (b) ? (b) : (a))
+
+// 确保 stsize 在 MIN_STACK_SIZE 与 MAX_STACK_SIZE 的范围内
+S->stsize = MIN(MAX(stsize, MIN_STACK_SIZE), MAX_STACK_SIZE);
+```
+
+## 确定大小端字节序
+
+```c
+void byteorder()
+{
+    union 
+    {
+        short value;
+        char union_bytes[ sizeof(short) ];
+    } test;
+
+    test.value = 0x0102;
+    if((test.union_bytes[0] == 1) && (test.union_bytes[1] == 2))
+    {
+        printf("big endian\n");
+    }
+    else if((test.union_bytes[0] == 2) && (test.union_bytes[1] == 1))
+    {
+        printf("little endian\n");
+    }
+    else
+    {
+        printf("unknown...\n");
+    }
+}
+```
