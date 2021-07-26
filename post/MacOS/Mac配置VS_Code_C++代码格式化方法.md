@@ -1,4 +1,4 @@
-## Mac 下 配置 VS Code C++ 代码格式化方法
+# Mac 下 配置 VS Code C++ 代码格式化方法
 
 > 原文地址：https://tygasoft.com/vs-code-c-code-format-method.html
 
