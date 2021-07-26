@@ -34,7 +34,7 @@
 
 使用
 
-```c++
+```cpp
 // 类
 class A
 {
@@ -174,7 +174,7 @@ inline int A::doA() { return 0; }   // 需要显式内联
 
 ##### 虚函数内联使用
 
-```c++
+```cpp
 #include <iostream>  
 using namespace std;
 class Base
@@ -218,7 +218,7 @@ int main()
 
 断言，是宏，而非函数。assert 宏的原型定义在 `<assert.h>`（C）、`<cassert>`（C++）中，其作用是如果它的条件返回错误，则终止程序执行。可以通过定义 `NDEBUG` 来关闭 assert，但是需要在源代码的开头，`include <assert.h>` 之前。
 
-```c++
+```cpp
 #define NDEBUG          // 加上这行，则 assert 不可用
 #include <assert.h>
 
@@ -234,7 +234,7 @@ assert( p != NULL );    // assert 不可用
 
 设定结构体、联合以及类成员变量以 n 字节方式对齐
 
-```c++
+```cpp
 #pragma pack(push)  // 保存对齐状态
 #pragma pack(4)     // 设定为 4 字节对齐
 
@@ -250,7 +250,7 @@ struct test
 
 ### 位域
 
-```c++
+```cpp
 Bit mode: 2;    // mode 占 2 位
 ```
 
@@ -262,7 +262,7 @@ Bit mode: 2;    // mode 占 2 位
 
 ### volatile
 
-```c++
+```cpp
 volatile int i = 10; 
 ```
 
@@ -280,7 +280,7 @@ volatile int i = 10;
 
 例子
 
-```c++
+```cpp
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -322,7 +322,7 @@ typedef struct Student S;
 
 即表现为可以使用 `Student` 也可以使用 `struct Student`，如下：
 
-```c++
+```cpp
 // cpp
 struct Student { 
     int age; 
@@ -333,7 +333,7 @@ void f( Student me );       // 正确，"struct" 关键字可省略
 
 二、若定义了与 `Student` 同名函数之后，则 `Student` 只代表函数，不代表结构体，如下：
 
-```c++
+```cpp
 typedef struct Student { 
     int age; 
 } S;
@@ -374,7 +374,7 @@ int main() {
 
 使用
 
-```c++
+```cpp
 #include<iostream>
 
 union UnionTest {
@@ -416,7 +416,7 @@ int main() {
 
 explicit 修饰的构造函数可用来防止隐式转换
 
-```c++
+```cpp
 struct A
 {
     A(int) { }
@@ -469,7 +469,7 @@ int main()
 
 一条 `using 声明` 语句一次只引入命名空间的一个成员。它使得我们可以清楚知道程序中所引用的到底是哪个名字。如：
 
-```c++
+```cpp
 using namespace_name::name;
 ```
 
@@ -477,7 +477,7 @@ using namespace_name::name;
 
 在 C++11 中，派生类能够重用其直接基类定义的构造函数。
 
-```c++
+```cpp
 class Derived : Base {
 public:
     using Base::Base;
@@ -487,7 +487,7 @@ public:
 
 如上 using 声明，对于基类的每个构造函数，编译器都生成一个与之对应（形参列表完全相同）的派生类构造函数。生成如下类型构造函数：
 
-```c++
+```cpp
 derived(parms) : base(args) { }
 ```
 
@@ -495,7 +495,7 @@ derived(parms) : base(args) { }
 
 `using 指示` 使得某个特定命名空间中所有名字都可见，这样我们就无需再为它们添加任何前缀限定符了。如：
 
-```c++
+```cpp
 using namespace_name name;
 ```
 
@@ -507,13 +507,13 @@ using namespace_name name;
 
 尽量少使用 `using 指示`
 
-```c++
+```cpp
 using namespace std;
 ```
 
 应该多使用 `using 声明`
 
-```c++
+```cpp
 int x;
 std::cin >> x ;
 std::cout << x << std::endl;
@@ -521,7 +521,7 @@ std::cout << x << std::endl;
 
 或者
 
-```c++
+```cpp
 using std::cin;
 using std::cout;
 using std::endl;
@@ -540,7 +540,7 @@ cout << x << endl;
 
 #### :: 使用
 
-```c++
+```cpp
 int count = 0;        // 全局（::）的 count
 
 class A {
@@ -562,13 +562,13 @@ int main() {
 
 #### 限定作用域的枚举类型
 
-```c++
+```cpp
 enum class open_modes { input, output, append };
 ```
 
 #### 不限定作用域的枚举类型
 
-```c++
+```cpp
 enum color { red, yellow, green };
 enum { floatPrec = 6, doublePrec = 10 };
 ```
@@ -577,13 +577,13 @@ enum { floatPrec = 6, doublePrec = 10 };
 
 decltype 关键字用于检查实体的声明类型或表达式的类型及值分类。语法：
 
-```c++
+```cpp
 decltype ( expression )
 ```
 
 使用
 
-```c++
+```cpp
 // 尾置返回允许我们在参数列表之后声明返回类型
 template <typename It>
 auto fcn(It beg, It end) -> decltype(*beg)
@@ -641,7 +641,7 @@ auto fcn2(It beg, It end) -> typename remove_reference<decltype(*beg)>::type
 
 #### initializer_list 使用
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 #include <initializer_list>
@@ -733,7 +733,7 @@ int main()
 
 函数重载
 
-```c++
+```cpp
 class A
 {
 public:
@@ -755,7 +755,7 @@ public:
 
 ##### 动态多态使用
 
-```c++
+```cpp
 class Shape                     // 形状类
 {
 public:
@@ -797,7 +797,7 @@ int main()
 
 ##### 虚析构函数使用
 
-```c++
+```cpp
 class Shape
 {
 public:
@@ -825,7 +825,7 @@ int main()
 
 纯虚函数是一种特殊的虚函数，在基类中不能对虚函数给出有意义的实现，而把它声明为纯虚函数，它的实现留给该基类的派生类去做。
 
-```c++
+```cpp
 virtual int A() = 0;
 ```
 
@@ -894,14 +894,14 @@ virtual int A() = 0;
 
 申请内存，确认是否申请成功
 
-```c++
+```cpp
 char *str = (char*) malloc(100);
 assert(str != nullptr);
 ```
 
 释放内存后指针置空
 
-```c++
+```cpp
 free(p); 
 p = nullptr;
 ```
@@ -916,7 +916,7 @@ p = nullptr;
 
 申请内存，确认是否申请成功
 
-```c++
+```cpp
 int main()
 {
     T* t = new T();     // 先内存分配 ，再构造函数
@@ -929,7 +929,7 @@ int main()
 
 定位 new（placement new）允许我们向 new 传递额外的参数。
 
-```c++
+```cpp
 new (palce_address) type
 new (palce_address) type (initializers)
 new (palce_address) type [size]
@@ -974,7 +974,7 @@ new (palce_address) type [size] { braced initializer list }
 
 #### C++ 98
 
-```c++
+```cpp
 std::auto_ptr<std::string> ps (new std::string(str))；
 ```
 
@@ -1055,7 +1055,7 @@ unique_ptr 是 C++11 才开始提供的类型，是一种在异常时可以帮�
 
 #### bad_cast 使用
 
-```c++
+```cpp
 try {  
     Circle& ref_circle = dynamic_cast<Circle&>(ref_shape);   
 }  
@@ -1104,7 +1104,7 @@ catch (bad_cast b) {
 
 #### typeid、type_info 使用
 
-```c++
+```cpp
 class Flyable                       // 能飞的
 {
 public:
@@ -1263,7 +1263,7 @@ STL 方法含义索引：https://github.com/huihut/interview/tree/master/STL
 
 顺序栈数据结构和图片
 
-```c++
+```cpp
  typedefstruct {
    ElemType*elem;
    int top;
@@ -1278,7 +1278,7 @@ STL 方法含义索引：https://github.com/huihut/interview/tree/master/STL
 
 ##### 队列数据结构
 
-```c++
+```cpp
 typedef struct {
     ElemType * elem;
     int front;
@@ -1293,7 +1293,7 @@ typedef struct {
 
 ![](https://cdn.jsdelivr.net/gh/etzero/static@master/images/Upic/2021/07/21/SqQueue.png)
 
-```c++
+```cpp
 SqQueue.rear++
 ```
 
@@ -1303,7 +1303,7 @@ SqQueue.rear++
 
 ![](https://cdn.jsdelivr.net/gh/etzero/static@master/images/Upic/2021/07/21/SqLoopStack.png)
 
-```c++
+```cpp
 SqQueue.rear = (SqQueue.rear + 1) % SqQueue.maxSize
 ```
 
@@ -1313,7 +1313,7 @@ SqQueue.rear = (SqQueue.rear + 1) % SqQueue.maxSize
 
 顺序表数据结构和图片
 
-```c++
+```cpp
 typedef struct {
     ElemType *elem;
     int length;
@@ -1332,7 +1332,7 @@ typedef struct {
 
 链式数据结构
 
-```c++
+```cpp
 typedef struct LNode {
     ElemType data;
     struct LNode *next;
@@ -1393,7 +1393,7 @@ typedef struct LNode {
 
 线性探测的哈希表数据结构和图片
 
-```c++
+```cpp
 typedef char KeyType;
 typedef struct {
     KeyType key;
@@ -1435,7 +1435,7 @@ typedef struct {
 
 广义表的头尾链表存储表示和图片
 
-```c++
+```cpp
 // 广义表的头尾链表存储表示
 typedef enum {ATOM, LIST} ElemTag;
 // ATOM==0：原子，LIST==1：子表
@@ -1460,7 +1460,7 @@ typedef struct GLNode {
 
 扩展线性链表存储表示和图片
 
-```c++
+```cpp
 // 广义表的扩展线性链表存储表示
 typedef enum {ATOM, LIST} ElemTag;
 // ATOM==0：原子，LIST==1：子表
@@ -1498,7 +1498,7 @@ typedef struct GLNode1 {
 
 二叉树数据结构
 
-```c++
+```cpp
 typedef struct BiTNode {
     TElemType data;
     struct BiTNode *lchild, *rchild;
@@ -1907,7 +1907,7 @@ B 树、B+ 树图片
 
 可以这样判断自己 CPU 字节序是大端还是小端：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -2378,7 +2378,7 @@ HTTP（HyperText Transfer Protocol，超文本传输协议）是一种用于分�
 
 #### Socket 中的 read()、write() 函数
 
-```c++
+```cpp
 ssize_t read(int fd, void *buf, size_t count);
 ssize_t write(int fd, const void *buf, size_t count);
 ```
@@ -2714,7 +2714,7 @@ add_library(MySharedLib SHARED library.cpp library.h)
 
 library.h
 
-```c++
+```cpp
 #ifndef MYSHAREDLIB_LIBRARY_H
 #define MYSHAREDLIB_LIBRARY_H
 // 打印 Hello World!
@@ -2735,7 +2735,7 @@ T sum(T first, Types ... rest)
 
 library.cpp
 
-```c++
+```cpp
 #include <iostream>
 #include "library.h"
 void hello() {
@@ -2775,7 +2775,7 @@ target_link_libraries(TestSharedLib MySharedLib)
 
 main.cpp
 
-```c++
+```cpp
 #include <iostream>
 #include "library.h"
 using std::cout;
@@ -2793,7 +2793,7 @@ int main() {
 
 执行结果
 
-```c++
+```cpp
 Hello, World!
 1 + 2 = 3
 1 + 2 + 3 = 6
@@ -2806,7 +2806,7 @@ Hello, World!
 
 _tWinMain 与 _tmain 函数声明
 
-```c++
+```cpp
 Int WINAPI _tWinMain(
     HINSTANCE hInstanceExe,
     HINSTANCE,
@@ -2862,7 +2862,7 @@ int _tmain(
 
 DllMain 函数
 
-```c++
+```cpp
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 {
     switch(fdwReason)
@@ -2892,7 +2892,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 
 LoadLibrary、LoadLibraryExA、LoadPackagedLibrary、FreeLibrary、FreeLibraryAndExitThread 函数声明
 
-```c++
+```cpp
 // 载入库
 HMODULE WINAPI LoadLibrary(
   _In_ LPCTSTR lpFileName
@@ -2922,7 +2922,7 @@ VOID WINAPI FreeLibraryAndExitThread(
 
 GetProcAddress 函数声明
 
-```c++
+```cpp
 FARPROC GetProcAddress(
   HMODULE hInstDll,
   PCSTR pszSymbolName  // 只能接受 ANSI 字符串，不能是 Unicode
@@ -2953,7 +2953,7 @@ LoadLibrary 与 FreeLibrary 流程图
 
 DLL 库的编写（导出一个 DLL 模块） DLL 头文件
 
-```c++
+```cpp
 // MyLib.h
 #ifdef MYLIBAPI
 // MYLIBAPI 应该在全部 DLL 源文件的 include "Mylib.h" 之前被定义
@@ -2971,7 +2971,7 @@ MYLIBAPI int Add(int nLeft, int nRight);
 
 DLL 源文件
 
-```c++
+```cpp
 // MyLibFile1.cpp
 // 包含标准Windows和C运行时头文件
 #include <windows.h>
@@ -2992,7 +2992,7 @@ int Add(int nLeft, int nRight)
 
 DLL 库的使用（运行时动态链接 DLL）
 
-```c++
+```cpp
 // A simple program that uses LoadLibrary and 
 // GetProcAddress to access myPuts from Myputs.dll. 
 #include <windows.h> 
