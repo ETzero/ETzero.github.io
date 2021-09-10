@@ -55,7 +55,7 @@ C++ 是由 Bjarne Stroustrup 于 1979 年在新泽西州美利山贝尔实验室
 
 让我们看一段简单的代码，可以输出单词 Hello World。
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 // main() 是程序开始执行的地方
@@ -86,14 +86,14 @@ C++ 语言定义了一些头文件，这些头文件包含了程序中必需的�
 
 例如：下面就一共有两条语句。
 
-```c++
+```cpp
 x = y;
 y = x+1;
 ```
 
 语句块是一组使用大括号括起来的按逻辑连接的语句。例如：
 
-```c++
+```cpp
 {
 cout << "Hello World"; // 输出 Hello World
 return 0;
@@ -129,7 +129,7 @@ C++ 标识符是用来标识变量、函数、类、模块，或任何其他用�
 
 下面列出几个有效的标识符：
 
-```c++
+```cpp
 test
 _temp
 ```
@@ -148,13 +148,13 @@ C++ 支持数组数据结构，它可以存储一个固定大小的相同类型�
 
 在 C++ 中要声明一个数组，需要指定元素的类型和元素的数量，如下所示：
 
-```c++
+```cpp
 type arrayName [ arraySize ];
 ```
 
 这叫做一维数组。arraySize 必须是一个大于零的整数常量，type 可以是任意有效的 C++ 数据类型。例如，要声明一个类型为 double 的包含 10 个元素的数组 balance，声明语句如下：
 
-```c++
+```cpp
 double balance[10];
 ```
 
@@ -164,7 +164,7 @@ double balance[10];
 
 在 C++ 中，可以逐个初始化数组，也可以使用一个初始化语句，如下所示：
 
-```c++
+```cpp
 double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0};
 ```
 
@@ -172,7 +172,7 @@ double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0};
 
 如果省略掉了数组的大小，数组的大小则为初始化时元素的个数。因此，如果：
 
-```c++
+```cpp
 double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
 ```
 
@@ -180,7 +180,7 @@ double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
 
 下面是一个为数组中某个元素赋值的实例：
 
-```c++
+```cpp
 balance[4] = 50.0;
 ```
 
@@ -190,13 +190,13 @@ balance[4] = 50.0;
 
 数组元素可以通过数组名称加索引进行访问。元素的索引是放在方括号内，跟在数组名称的后边。例如：
 
-```c++
+```cpp
 double salary = balance[9];
 ```
 
 上面的语句将把数组中第 10 个元素的值赋给 salary 变量。下面的实例使用了上述的三个概念，即，声明数组、数组赋值、访问数组：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
  
@@ -237,13 +237,13 @@ C 风格的字符串起源于 C 语言，并在 C++ 中继续得到支持。字�
 
 下面的声明和初始化创建了一个 "Hello" 字符串。**由于在数组的末尾存储了空字符，所以字符数组的大小比单词 "Hello" 的字符数多一个**。
 
-```c++
+```cpp
 char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
 ```
 
 依据数组初始化规则，可以把上面的语句写成以下语句：
 
-```c++
+```cpp
 char greeting[] = "Hello";
 ```
 
@@ -255,7 +255,7 @@ char greeting[] = "Hello";
 
 实例
 
-```c++
+```cpp
 #include <iostream> 
 using namespace std;
  int main (){ 
@@ -268,7 +268,7 @@ using namespace std;
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 Greeting message: Hello
 ```
 
@@ -287,7 +287,7 @@ C++ 中有大量的函数用来操作以 null 结尾的字符串：supports a wi
 
 实
 
-```c++
+```cpp
 #include <iostream>
 #include <cstring>
  
@@ -318,7 +318,7 @@ int main ()
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 strcpy( str3, str1) : Hellostrcat( str1, str2): HelloWorldstrlen(str1) : 10C++ 中的 String 类
 ```
 
@@ -326,7 +326,7 @@ strcpy( str3, str1) : Hellostrcat( str1, str2): HelloWorldstrlen(str1) : 10C++ �
 
 C++ 标准库提供了 string 类类型，支持上述所有的操作，另外还增加了其他更多的功能。现在让我们先来看看下面这个实例：
 
-```c++
+```cpp
 #include <iostream>
 #include <string>
  
@@ -369,7 +369,7 @@ str3.size() : 10
 
 循环语句允许我们多次执行一个语句或语句组，下面是大多数编程语言中循环语句的一般形式
 
-```c++
+```cpp
 loop
   check condition
   if condition is true
@@ -407,7 +407,7 @@ C++ 提供了下列的控制语句。
 
 实例
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
  
@@ -431,7 +431,7 @@ int main ()
 
 下面是大多数编程语言中典型的判断结构的一般形式:
 
-```c++
+```cpp
 if condistion true
   do something
 else
@@ -474,7 +474,7 @@ C++ 的 I/O 发生在流中，流是字节序列。如果字节流是从设备�
 
 实例
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 int main( )
@@ -495,7 +495,7 @@ C++ 编译器根据要输出变量的数据类型，选择合适的流插入运�
 
 **预定义的对象 cin 是 iostream 类的一个实例**。cin 对象附属到标准输入设备，通常是键盘。cin 是与流提取运算符 >> 结合使用的，如下所示：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 int main( )
@@ -509,7 +509,7 @@ int main( )
 
 当上面的代码被编译和执行时，它会提示用户输入名称。当用户输入一个值，并按回车键，就会看到下列结果：
 
-```c++
+```cpp
 请输入您的名称：cplusplus
 您的名称是：cplusplus
 ```
@@ -518,7 +518,7 @@ C++ 编译器根据要输入值的数据类型，选择合适的流提取运算�
 
 **流提取运算符 >> 在一个语句中可以多次使用**，如果要求输入多个数据，可以使用如下语句：
 
-```c++
+```cpp
 cin >> name >> age;
 
 /*这相当于下面两个语句：*/
@@ -532,7 +532,7 @@ cin >> age;
 
 cerr 也是与流插入运算符 << 结合使用的，如下所示：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std; 
 int main( )
@@ -544,7 +544,7 @@ int main( )
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 Error message : Unable to read....
 ```
 
@@ -554,7 +554,7 @@ Error message : Unable to read....
 
 clog 也是与流插入运算符 << 结合使用的，如下所示：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 int main(void)
@@ -566,7 +566,7 @@ int main(void)
 
 当上面的代码被编译和执行时，它会产生下列结果:
 
-```c++
+```cpp
 Error message : Unable to read....
 ```
 
@@ -578,7 +578,7 @@ Error message : Unable to read....
 
 每一个变量都有一个内存位置，每一个内存位置都定义了可使用连字号（&）运算符访问的地址，它表示了在内存中的一个地址。请看下面的实例，它将输出定义的变量地址：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 int main ()
@@ -606,13 +606,13 @@ var2 变量的地址：0xbfebd5b6
 
 指针是一个变量，其值为另一个变量的地址，即，内存位置的直接地址。就像其他变量或常量一样，必须在使用指针存储其他变量地址之前，对其进行声明。指针变量声明的一般形式为：
 
-```c++
+```cpp
 type *var-name;
 ```
 
 在这里，type 是指针的基类型，它必须是一个有效的 C++ 数据类型，var-name 是指针变量的名称。用来声明指针的星号 * 与乘法中使用的星号是相同的。但是，在这个语句中，星号是用来指定一个变量是指针。以下是有效的指针声明：
 
-```c++
+```cpp
 int *ip; /* 一个整型的指针 */
 double *dp; /* 一个 double 型的指针 */
 float *fp; /* 一个浮点型的指针 */
@@ -625,7 +625,7 @@ char *ch; /* 一个字符型的指针 */
 
 使用指针时会频繁进行以下几个操作：定义一个指针变量、把变量地址赋值给指针、访问指针变量中可用地址的值。这些是通过使用一元运算符 *来返回位于操作数所指定地址的变量的值。下面的实例涉及到了这些操作：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 int main ()
@@ -651,7 +651,7 @@ int main ()
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 Value of var variable: 20
 Address stored in ip variable: 0xbfc601ac
 Value of *ip variable: 20
@@ -673,19 +673,19 @@ Value of *ip variable: 20
 
 试想变量名称是变量附属在内存位置中的标签，可以把引用当成是变量附属在内存位置中的第二个标签。因此，可以通过原始变量名称或引用来访问变量的内容。例如：
 
-```c++
+```cpp
 int i = 17;
 ```
 我们可以为 i 声明引用变量，如下所示：
 
-```c++
+```cpp
 int& r = i;
 double& s = d;
 ```
 
 在这些声明中，& 读作引用。因此，第一个声明可以读作 "r 是一个初始化为 i 的整型引用"，第二个声明可以读作 "s 是一个初始化为 d 的 double 型引用"。下面的实例使用了 int 和 double 引用：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
 int main ()
@@ -712,7 +712,7 @@ int main ()
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 Value of i : 5
 Value of i reference : 5
 Value of d : 11.7
@@ -740,7 +740,7 @@ C++ 在 C 语言的基础上增加了面向对象编程，C++ 支持面向对象
 
 类定义是以关键字 class 开头，后跟类的名称。类的主体是包含在一对花括号中。类定义后必须跟着一个分号或一个声明列表。例如，我们使用关键字 class 定义 Box 数据类型，如下所示：
 
-```c++
+```cpp
 class Box
 {
    public:
@@ -756,7 +756,7 @@ class Box
 
 类提供了对象的蓝图，所以基本上，对象是根据类来创建的。声明类的对象，就像声明基本类型的变量一样。下面的语句声明了类 Box 的两个对象：
 
-```c++
+```cpp
 Box Box1; // 声明 Box1，类型为 Box 
 Box Box2; // 声明 Box2，类型为 Box
 // 对象 Box1 和 Box2 都有它们各自的数据成员。
@@ -766,7 +766,7 @@ Box Box2; // 声明 Box2，类型为 Box
 
 类的对象的公共数据成员可以使用直接成员访问运算符 (.) 来访问。为了更好地理解这些概念，让我们尝试一下下面的实例：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
  
@@ -807,7 +807,7 @@ int main( )
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 Box1 的体积：210
 Box2 的体积：1560
 ```
@@ -826,7 +826,7 @@ Box2 的体积：1560
 
 一个类可以派生自多个类，这意味着，它可以从多个基类继承数据和函数。定义一个派生类，我们使用一个类派生列表来指定基类。类派生列表以一个或多个基类命名，形式如下：
 
-```c++
+```cpp
 class derived-class: access-specifier base-class
 ```
 
@@ -834,7 +834,7 @@ class derived-class: access-specifier base-class
 
 假设有一个基类 **Shape，Rectangle** 是它的派生类，如下所示：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
  
@@ -877,7 +877,7 @@ int main(void)
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 Total area: 35
 ```
 
@@ -915,7 +915,7 @@ Total area: 35
 
 C++ 类可以从多个类继承成员，语法如下：
 
-```c++
+```cpp
 class <派生类名>:<继承方式1><基类名1>,<继承方式2><基类名2>,…
 {
 <派生类类体>
@@ -924,7 +924,7 @@ class <派生类名>:<继承方式1><基类名1>,<继承方式2><基类名2>,…
 
 其中，访问修饰符继承方式是 public、protected 或 private 其中的一个，用来修饰每个基类，各个基类之间用逗号分隔，如上所示。现在让我们一起看看下面的实例：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
  
@@ -982,7 +982,7 @@ int main(void)
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 Total area: 35
 Total paint cost: $2450
 ```
@@ -1001,7 +1001,7 @@ C++ 允许在同一作用域中的某个**函数**和**运算符**指定多个�
 
 下面的实例中，同名函数 print() 被用于输出不同的数据类型：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
  
@@ -1039,7 +1039,7 @@ int main(void)
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 整数为: 5
 浮点数为: 500.263
 字符串为: Hello C++
@@ -1051,19 +1051,19 @@ int main(void)
 
 重载的运算符是带有特殊名称的函数，函数名是由关键字 operator 和其后要重载的运算符符号构成的。与其他函数一样，重载运算符有一个返回类型和一个参数列表。
 
-```c++
+```cpp
 Box operator+(const Box&);
 ```
 
 声明加法运算符用于把两个 Box 对象相加，返回最终的 Box 对象。大多数的重载运算符可被定义为普通的非成员函数或者被定义为类成员函数。如果我们定义上面的函数为类的非成员函数，那么我们需要为每次操作传递两个参数，如下所示：
 
-```c++
+```cpp
 Box operator+(const Box&, const Box&);
 ```
 
 下面的实例使用成员函数演示了运算符重载的概念。在这里，对象作为参数进行传递，对象的属性使用 this 运算符进行访问，如下所示：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
  
@@ -1138,7 +1138,7 @@ int main( )
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 Volume of Box1 : 210
 Volume of Box2 : 1560
 Volume of Box3 : 5400
@@ -1154,7 +1154,7 @@ C++ 多态意味着调用成员函数时，会根据调用函数的对象的类�
 
 下面的实例中，基类 Shape 被派生为两个类，如下所示：
 
-```c++
+```cpp
 #include <iostream> 
 using namespace std;
  
@@ -1210,7 +1210,7 @@ int main( )
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 Parent class area
 Parent class area
 ```
@@ -1219,7 +1219,7 @@ Parent class area
 
 但现在，让我们对程序稍作修改，在 Shape 类中，area() 的声明前放置关键字 virtual，如下所示：
 
-```c++
+```cpp
 class Shape {
    protected:
       int width, height;
@@ -1237,7 +1237,7 @@ class Shape {
 
 修改后，当编译和执行前面的实例代码时，它会产生以下结果：
 
-```c++
+```cpp
 Rectangle class area
 Triangle class area
 ```
@@ -1258,7 +1258,7 @@ Triangle class area
 
 我们可以把基类中的虚函数 area() 改写如下：
 
-```c++
+```cpp
 class Shape {
    protected:
       int width, height;
@@ -1290,7 +1290,7 @@ class Shape {
 
 在 C++ 中，我们使用类来定义我们自己的抽象数据类型（ADT）。可以使用类 iostream 的 cout 对象来输出数据到标准输出，如下所示：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
  
@@ -1327,7 +1327,7 @@ int main( )
 
 C++ 程序中，任何带有公有和私有成员的类都可以作为数据抽象的实例。请看下面的实例：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
  
@@ -1364,7 +1364,7 @@ int main( )
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 Total 60
 ```
 
@@ -1383,7 +1383,7 @@ Total 60
 
 C++ 通过创建类来支持封装和数据隐藏（public、protected、private）。我们已经知道，类包含私有成员（private）、保护成员（protected）和公有成员（public）成员。默认情况下，在类中定义的所有项目都是私有的。例如：
 
-```c++
+```cpp
 class Box
 {
    public:
@@ -1407,7 +1407,7 @@ class Box
 
 C++ 程序中，任何带有公有和私有成员的类都可以作为数据封装和数据抽象的实例。请看下面的实例：
 
-```c++
+```cpp
 #include <iostream>
 using namespace std;
  
@@ -1443,7 +1443,7 @@ int main(void)
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 Total 60
 ```
 
@@ -1465,7 +1465,7 @@ Total 60
 
 模板函数定义的一般形式如下所示：
 
-```c++
+```cpp
 template <class type> ret-type func-name(parameter list) 
 {
  // 函数的主体 
@@ -1476,7 +1476,7 @@ template <class type> ret-type func-name(parameter list)
 
 下面是函数模板的实例，返回两个数中的最大值：
 
-```c++
+```cpp
 #include <iostream>
 #include <string>
  
@@ -1507,7 +1507,7 @@ int main ()
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 Max(i, j): 39
 Max(f1, f2): 20.7
 Max(s1, s2): World类模板
@@ -1515,7 +1515,7 @@ Max(s1, s2): World类模板
 
 正如我们定义函数模板一样，我们也可以定义类模板。泛型类声明的一般形式如下所示：
 
-```c++
+```cpp
 template <class type> class class-name {
 .....
 }
@@ -1525,7 +1525,7 @@ template <class type> class class-name {
 
 下面的实例定义了类 Stack<>，并实现了泛型方法来对元素进行入栈出栈操作：
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 #include <cstdlib>
@@ -1600,7 +1600,7 @@ int main()
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 7
 hello
 Exception: Stack<>::pop(): empty stack
@@ -1622,7 +1622,7 @@ C++ 标准模板库的核心包括以下三个组件：
 
 下面的程序演示了向量容器（一个 C++ 标准的模板），它与数组十分相似，唯一不同的是，向量在需要扩展大小的时候，会自动处理它自己的存储需求：
 
-```c++
+```cpp
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -1662,7 +1662,7 @@ int main()
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```c++
+```cpp
 vector size = 0
 extended vector size = 5
 value of vec [0] = 0
