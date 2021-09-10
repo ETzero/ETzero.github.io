@@ -7,8 +7,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/ETzero/static@master/css/docsify/custom.css">
-  <!-- 支持 LaTex 语言 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+  
 </head>
 
 <body>
@@ -46,6 +45,8 @@
         auto2top: true,
         topMargin: 90,
         pagination: {
+          previousText: '上一篇',
+          nextText: '下一篇',
           crossChapter: true,
           crossChapterText: true,
         },
@@ -120,8 +121,41 @@
             }
           }
       },
-
-
+      plugins: [
+          function (hook, vm) {
+            hook.beforeEach(function (content) {
+              return content.replace(/\$\$([\s\S]*?)\$\$/g, function (m, code) {
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub])
+                return code
+              })
+            });
+            hook.doneEach(function () {
+              if (typeof MathJax !== 'undefined') {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub])
+              }
+            });
+            // add copyright
+            hook.beforeEach(function(content) {
+              var url = 'https://github.com/ETzero/ETzero.github.io/blob/master/post/' + vm.route.file;
+              var copyRight = ['\n\n\n <hr/> \n\n\n ',
+                    '<div> \n\n\n ',
+                    '如有文章中存在错误，欢迎指正给作者: [ETZero](mailto:609531526@qq.com) \n\n',
+                    '版权声明: 本博客所有文章除特别声明外，均采用',
+                    '[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)许可协议。\n\n',
+                    '文章[链接]('+url+')， \r\n',
+                    '转载请注明来自[ETZero](https://etzero.github.io/)！\n\n',
+                    '</div>'
+                    ].join('');
+              var startIndex = vm.route.file.lastIndexOf('/');
+              var endIndex = vm.route.file.lastIndexOf('.');
+              var fileName = vm.route.file.substring(startIndex+1,endIndex)
+              if(fileName != 'README') {
+                content = content + copyRight
+              }
+              return content;
+            });
+          }
+        ],
     }
   </script>
 
@@ -133,6 +167,9 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-go.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js"></script>
+  
   <!--搜索插件-->
   <!--script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script-->
   <script src="//cdn.jsdelivr.net/gh/ETzero/static@master/js/docsify/search.min.js"></script>
@@ -140,9 +177,23 @@
   <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
   <!--DOT 语言 插件-->
   <script src="https://cdn.jsdelivr.net/npm/viz.js@1.8.0/viz.js"></script>
+
   <!--支持 LaTex -->
   <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+  </script>
+  <script src="//cdn.bootcss.com/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   <!-- 支持PDF页面展示功能 -->
   <script src="//cdn.jsdelivr.net/gh/ETzero/static@master/js/docsify/pdfobject.min.js"></script>

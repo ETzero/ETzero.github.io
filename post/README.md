@@ -1,4 +1,6 @@
 # [MacOS](./MacOS/README.md)
+# [算法](./算法/README.md)
 # [unp](./unp/README.md)
+# [数据库](./数据库/README.md)
 # [language](./language/README.md)
 # [计算机基础](./计算机基础/README.md)
